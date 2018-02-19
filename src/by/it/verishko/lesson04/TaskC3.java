@@ -26,50 +26,26 @@ package by.it.verishko.lesson04;
 import java.util.Scanner;
 
 public class TaskC3 {
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int j = sc.nextInt();
-        int i = sc.nextInt();
-//        for (i = 1; i <= 20; i++) {
-//            for (j = 1; j <= 20; j++) {
-        if (j == 2 && i == 1)
-            System.out.println("два умножить на один равно два");
-        if (j == 2 && i == 2)
-            System.out.println("два умножить на два равно четыре");
-        if (j == 3 && i == 2)
-            System.out.println("три умножить на два равно шесть");
-        if (j == 4 && i == 2)
-            System.out.println("четыре умножить на два равно восемь");
-        if (j == 5 && i == 2)
-            System.out.println("пять умножить на два равно десять");
-        if (j == 6 && i == 2)
-            System.out.println("шесть умножить на два равно двенадцать");
-        if (j == 7 && i == 2)
-            System.out.println("семь умножить на два равно четырнадцать");
-        if (j == 8 && i == 2)
-            System.out.println("восемь умножить на два равно шестнадцать");
-        if (j == 9 && i == 2)
-            System.out.println("девять умножить на два равно восемнадцать");
-        if (j == 10 && i == 2)
-            System.out.println("десять умножить на два равно двадцать");
-        if (j == 2 && i == 2)
-            System.out.println("два умножить на два равно четыре");
-        if (j == 2 && i == 3)
-            System.out.println("два умножить на три равно шесть");
-//        System.out.print(i * j + " ");
 
+    static String digit(int n) {
+        String[] e = {"один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать", "двенадцать", "триннадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать", "двадцать"};
+        String[] t = {"-", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто", "сто"};
+        if (n < 20)
+            return e[n - 1];
+        else if (n % 10 == 0)
+            return t[n / 10 - 1];
+        else
+            return t[n / 10 - 1] + " " + e[n % 10 - 1];
     }
-//            System.out.println();
+
+    public static void main(String[] args) {
+        for (int i = 2; i <=10; i++) {
+            for (int j = 2; j <=10; j++) {
+                System.out.println(digit(i) + " умножить на " + digit(j) + " равно " + digit(i * j));
+
+            }
+
+        }
+        System.out.println(digit(23));
+    }
 }
-//        String x2 = "один";
-//        String x2 = "два";
-//        String x3 = "три";
-//        String x4 = "четыре";
-//        String x5 = "п";
-//        String x6 = "ш";
-//        String x7 = "с";
-//        String x8 = "в";
-//        String x9 = "д";
-//        String x20 = "д";
-//    }
-//}
