@@ -32,13 +32,14 @@ public class TaskC1 {
             int ai = list.get(i);
             if (ai % 3 == 0) {
                 list3.add(ai);
-            } else if (ai % 2 == 0) {
+            }
+            if (ai % 2 == 0) {
                 list2.add(ai);
-            } else if (ai % 3 == 0 && ai % 2 == 0) {
-                list3.add(ai);
-                list2.add(ai);
-            } else {
-                listOther.add(ai);
+            }
+            if (ai % 3 != 0 && ai % 2 != 0) {
+
+           listOther.add(ai);
+
             }
         }
         printList(list3);
